@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const {default: mongoose} = require('mongoose');
 const multer = require('multer');
 
-const DB_PATH = "mongodb+srv://root:root@codehike.ecoyqup.mongodb.net/airbnb?retryWrites=true&w=majority&appName=codeHike"
+const DB_PATH = process.env.MONGODB_URI;
 
 const path = require('path');
 
