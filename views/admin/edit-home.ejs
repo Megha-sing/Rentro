@@ -1,0 +1,52 @@
+<%- include('../partials/head') %>
+    </head>
+    <body class="font-sans">
+        <%- include('../partials/header') %>
+        <main class="bg-black/98 pt-18 font-bold min-h-screen pb-2">
+            <div 
+                class="absolute inset-0 h-full w-full 
+                    bg-[linear-gradient(to_right,#ffffff0f_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0f_1px,transparent_1px)] 
+                    bg-[size:24px_24px] pointer-events-none z-0"
+            ></div>
+            <div class="relative z-10">
+                <div class="text-white p-2 text-2xl flex justify-center">
+                    <h2><%= editing ? "Edit" : "Register" %> Your Home</h2>
+                </div>
+                <form action='/host/<%= editing ? "edit-home" : "add-home" %>' method="POST" enctype="multipart/form-data" class="max-w-sm mx-auto">
+                    <input type="hidden" name="id" value="<%= editing ? home._id : '' %>"/>
+                    <div class="mb-5">
+                        <label for="houseName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">House Name</label>
+                        <input value="<%= editing ? home.houseName : '' %>" type="text" id="houseName" name="houseName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your House Name"/>
+                    </div>
+                    <div class="mb-5">
+                        <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                        <input value="<%= editing ? home.price : '' %>" type="text" id="price" name="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter price per night"/>
+                    </div>
+                    <div class="mb-5">
+                        <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
+                        <input value="<%= editing ? home.location : '' %>" type="text" id="location" name="location" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Location"/>
+                    </div>
+                    <div class="mb-5">
+                        <label for="rating" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rating</label>
+                        <input value="<%= editing ? home.rating : '' %>" type="text" id="rating" name="rating" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Rating"/>
+                    </div>
+                    <div class="mb-5">
+                        <label for="photo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white hover:cursor-pointer">Image photo</label>
+                        <input type="file" id="photo" name="photo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:cursor-pointer"/>
+                    </div>
+                    <!-- <div class="mb-5">
+                        <label for="document" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white hover:cursor-pointer">Upload House Rules</label>
+                        <input type="file" id="document" name="document" accept=".pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:cursor-pointer"/>
+                    </div> -->
+                    <div class="mb-5">
+                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                        <textarea id="description" name="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description for Your House"><%= editing ? home.description : '' %></textarea>
+                    </div>
+                    <div class="flex justify-center items-center pt-2">
+                        <button type="submit" class="text-white border border-gray-600 shadow hover:shadow-gray-500 bg-zinc-950 font-medium rounded-4xl text-sm w-auto px-5 py-2.5 text-center hover:cursor-pointer transition-all"><%= editing ? "Update" : "Submit" %></button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

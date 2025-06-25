@@ -1,0 +1,21 @@
+<%- include('../partials/head') %>
+    </head>
+    <body class="font-sans">
+        <%- include('../partials/header') %>
+        <main class="bg-black/98 min-h-screen min-w-screen overflow-hidden pt-18 font-bold flex flex-col justify-center items-center">
+            <div 
+                class="absolute inset-0 h-full w-full 
+                    bg-[linear-gradient(to_right,#ffffff0f_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0f_1px,transparent_1px)] 
+                    bg-[size:24px_24px] pointer-events-none z-0"
+            ></div>
+            <div class="relative z-10">
+                <div class="text-white w-full text-4xl p-5 flex justify-center items-center">
+                    <h1>Home Registered Successfully</h1>
+                </div>
+                <div class="text-white p-2 flex justify-center items-center">
+                    <a class="bg-zinc-950 text-white font-bold py-2 px-4 rounded-3xl hover:cursor-pointer transition-all border border-gray-500 shadow hover:shadow-gray-500" href="/homes">Go To Home Page</a>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

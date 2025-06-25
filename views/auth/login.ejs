@@ -1,0 +1,32 @@
+<%- include('../partials/head') %>
+    </head>
+    <body class="font-sans">
+        <%- include('../partials/header') %>
+        <main class="bg-black/98 min-h-screen pt-18 font-bold">
+            <div 
+                class="absolute inset-0 h-full w-full 
+                    bg-[linear-gradient(to_right,#ffffff0f_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0f_1px,transparent_1px)] 
+                    bg-[size:24px_24px] pointer-events-none z-0"
+            ></div>
+            <div class="relative z-10">
+                <div class="text-green-300 justify-center flex items-center w-full text-4xl p-5">
+                    <h1>Login</h1>
+                </div>
+                <form action='/login' method="POST" class="max-w-sm mx-auto">
+                    <%- include('../partials/errors') %>
+                    <div class="mb-5">
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                        <input required value="<%= oldInput.email ? oldInput.email : '' %>" type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your Email"/>
+                    </div>
+                    <div class="mb-5">
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <input required type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Your Password"/>
+                    </div>
+                    <div class="flex justify-center items-center pt-2">
+                        <button type="submit" class="text-white border border-gray-600 shadow hover:shadow-gray-500 font-medium rounded-4xl text-sm w-auto px-5 py-2.5 text-center hover:cursor-pointer bg-zinc-950">Login</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

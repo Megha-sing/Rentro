@@ -1,0 +1,84 @@
+<header class="bg-gradient-to-b fixed from-black to-zinc-900/97 p-5 font-bold w-full flex items-center justify-between z-50">
+    <div 
+        class="absolute inset-0 h-full w-full 
+            bg-[linear-gradient(to_right,#ffffff0f_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0f_1px,transparent_1px)] 
+            bg-[size:24px_24px] pointer-events-none z-0"
+    ></div>
+    <div class="relative inline-block">
+        <a href="/" class="text-xl text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-400 transition-colors duration-300 hover:from-green-400 hover:to-green-300">Roomora</a>
+    </div>
+    <% if(isLoggedIn) { %>
+        <div class="hidden text-white md:flex justify-center items-center gap-10 text-lg">
+            <% if(user && user.userType === 'guest') { %>
+                <a href="/homes" class="hover:text-green-400 <%= currentPage === 'Home' ? 'text-green-400' : '' %>  hover:cursor-pointer transition-all">Home</a>
+                <a href="/favourites" class="hover:text-green-400 <%= currentPage === 'Favourites' ? 'text-green-300' : '' %> hover:cursor-pointer transition-all">Favourites</a>
+                <a href="/bookings" class="hover:text-green-400 <%= currentPage === 'Bookings' ? 'text-green-400' : '' %>  hover:cursor-pointer transition-all">Bookings</a>
+            <% } else { %>
+                <a href="/host/host-home-list" class="hover:text-green-400 <%= currentPage === 'Host-Home' ? 'text-green-400' : '' %> hover:cursor-pointer transition-all">Host Homes</a>
+                <a href="/host/add-home" class="hover:text-green-400 <%= currentPage === 'Add-Home' ? 'text-green-400' : '' %> hover:cursor-pointer transition-all">Add Home</a>
+            <% } %>
+        </div>
+    <% } %>
+    <% if(!isLoggedIn) { %>
+        <div class="flex justify-center gap-10 items-center">
+            <a href="/signup" class="hover:text-green-400 text-lg <%= currentPage === 'SignUp' ? 'text-green-400' : 'text-white' %> hover:cursor-pointer transition-all">SignUp</a>
+            <a href="/login" class="hover:text-green-400 text-lg <%= currentPage === 'Login' ? 'text-green-400' : 'text-white' %> hover:cursor-pointer transition-all">Login</a>
+        </div>
+    <% } else { %>
+        <div class="hidden md:flex">
+            <form action="/logout" method="POST">
+            <button type="submit" class="hover:text-green-400 text-lg text-white hover:cursor-pointer transition-all">Logout</button>
+            </form>
+        </div>
+        <!-- Hamburger Menu for Mobile -->
+        <div class="relative md:hidden">
+            <button id="mobile-menu-btn" class="space-y-1.5 group hover:cursor-pointer focus:outline-none">
+            <div class="w-5 h-0.5 bg-white"></div>
+            <div class="w-5 h-0.5 bg-white"></div>
+            <div class="w-5 h-0.5 bg-white"></div>
+            </button>
+            <div id="mobile-menu" class="fixed inset-0 bg-zinc-950 z-50 flex flex-col items-center pt-20 space-y-8 transition-all duration-200 opacity-0 pointer-events-none">
+            <!-- Grid lines background -->
+            <div 
+                class="absolute inset-0 h-full w-full 
+                bg-[linear-gradient(to_right,#ffffff0f_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0f_1px,transparent_1px)] 
+                bg-[size:24px_24px] pointer-events-none z-0"
+            ></div>
+            <button id="close-mobile-menu" class="absolute top-5 right-5 p-2 rounded-full hover:bg-zinc-800 focus:outline-none hover:cursor-pointer z-10">
+                <div class="relative w-5 h-5">
+                <div class="absolute w-5 h-0.5 bg-white rotate-45 top-1/2 left-0"></div>
+                <div class="absolute w-5 h-0.5 bg-white -rotate-45 top-1/2 left-0"></div>
+                </div>
+            </button>
+            <div class="relative z-10 flex flex-col items-center space-y-8">
+                <% if(user && user.userType === 'guest') { %>
+                <a href="/homes" class="text-xl hover:text-green-400 transition-all <%= currentPage === 'Home' ? 'text-green-400' : 'text-white' %>">Home</a>
+                <a href="/favourites" class="text-xl hover:text-green-400 transition-all <%= currentPage === 'Favourites' ? 'text-green-400' : 'text-white' %>">Favourites</a>
+                <a href="/bookings" class="text-xl hover:text-green-400 transition-all <%= currentPage === 'Bookings' ? 'text-green-400' : 'text-white' %>">Bookings</a>
+                <% } else { %>
+                <a href="/host/host-home-list" class="text-xl hover:text-green-400 transition-all <%= currentPage === 'Host-Home' ? 'text-green-400' : 'text-white' %>">Host Homes</a>
+                <a href="/host/add-home" class="text-xl hover:text-green-400 transition-all <%= currentPage === 'Add-Home' ? 'text-green-400' : 'text-white' %>">Add Home</a>
+                <% } %>
+                <form action="/logout" method="POST">
+                <button type="submit" class="text-xl text-red-500 hover:text-red-400 transition-all hover:cursor-pointer">Logout</button>
+                </form>
+            </div>
+            </div>
+            <script>
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const closeBtn = document.getElementById('close-mobile-menu');
+            menuBtn.addEventListener('click', () => {
+            menu.style.top = '0';
+            menu.style.opacity = '1';
+            menu.style.pointerEvents = 'auto';
+            });
+            closeBtn.addEventListener('click', () => {
+            menu.style.top = '-100vh';
+            menu.style.opacity = '0';
+            menu.style.pointerEvents = 'none';
+            });
+            </script>
+        </div>
+        <% } %>
+    </header>
