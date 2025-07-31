@@ -1,5 +1,5 @@
 {
-  "name": "roomora",
+  "name": "rentro",
   "version": "1.0.0",
   "description": "An airbnb duplicate with MVC Model",
   "main": "app.js",
