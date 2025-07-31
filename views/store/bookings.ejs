@@ -9,7 +9,7 @@
                     bg-[size:24px_24px] pointer-events-none z-0"
             ></div>
             <div class="relative z-10">
-                <div class="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-400 justify-center flex items-center w-full text-4xl p-5">
+                <div class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-400 justify-center flex items-center w-full text-4xl p-5">
                     <h1>My Bookings</h1>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
@@ -29,7 +29,7 @@
                                     <span class="text-xl font-bold text-gray-900 dark:text-white">₹ <%= home.price %>/Night</span>
                                 </div>
                                 <div class="flex items-center justify-center mt-8 w-full gap-4">
-                                    <span class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-400 to-green-600 text-white text-base font-semibold rounded-full shadow-md">
+                                    <span class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-600 text-white text-base font-semibold rounded-full shadow-md">
                                         <svg class="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                                         </svg>
@@ -38,7 +38,7 @@
                                     <form action="/cancel-booking/<%= home._id %>" method="POST">
                                         <button
                                             type="submit"
-                                            class="hover:cursor-pointer inline-flex items-center px-4 py-2 border border-gray-600 shadow hover:shadow-gray-500 text-white transition-all rounded-4xl"
+                                            class="hover:cursor-pointer inline-flex items-center px-4 py-2 border border-gray-600 shadow hover:shadow-gray-500 text-red-500 transition-all rounded-4xl"
                                             onclick="return confirm('Are you sure you want to cancel this booking?');"
                                         >
                                             Cancel Booking

@@ -29,9 +29,9 @@
                                     <span class="text-xl font-bold text-gray-900 dark:text-white">₹ <%= home.price %>/Night</span>
                                 </div>
                                 <div class="mt-3 flex justify-between">
-                                    <a href="/host/edit-home/<%= home._id %>?editing=true" class="border border-gray-600 shadow hover:shadow-gray-500 px-4 py-2 rounded-4xl hover:cursor-pointer mx-2 text-white transition-all">Edit</a>
+                                    <a href="/host/edit-home/<%= home._id %>?editing=true" class="border border-gray-600 shadow hover:shadow-gray-500 px-4 py-2 rounded-4xl hover:cursor-pointer mx-2 text-green-400 transition-all">Edit</a>
                                     <form action="/host/delete-home/<%= home._id %>" method="POST">
-                                        <button type="submit" class="border border-gray-600 shadow hover:shadow-gray-500 text-white px-4 py-2 rounded-4xl hover:cursor-pointer mx-2 transition-all">Delete</button>
+                                        <button type="submit" class="border border-gray-600 shadow hover:shadow-gray-500 text-red-500 px-4 py-2 rounded-4xl hover:cursor-pointer mx-2 transition-all">Delete</button>
                                     </form>
                                 </div>
                             </div>

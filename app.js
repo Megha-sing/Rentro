@@ -4,7 +4,6 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const {default: mongoose} = require('mongoose');
 const multer = require('multer');
-
 const DB_PATH = process.env.MONGODB_URI;
 
 const path = require('path');
@@ -113,7 +112,11 @@ app.use('/host', (req, res, next) => {
 });
 app.use('/host', hostRouter);
 
+
 app.use(errorsController.pageNotFound);
+
+
+
 
 const PORT = 3000;
 

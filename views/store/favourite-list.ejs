@@ -9,7 +9,7 @@
                     bg-[size:24px_24px] pointer-events-none z-0"
             ></div>
             <div class="relative z-10">
-                <div class="text-white m-5 p-2 text-2xl flex justify-center">
+                <div class="text-blue-400 m-5 p-2 text-2xl flex justify-center">
                     <h2>Favourites List</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-5">
@@ -30,10 +30,10 @@
                                 </div>
                                 <div class="flex justify-between mx-2 mt-5">
                                     <form action="/delete-favourite/<%= home._id %>" method="POST">
-                                        <button type="submit" class="border border-gray-600 shadow hover:shadow-gray-500 text-white px-4 py-2 mt-3 rounded-4xl hover:cursor-pointer transition-all">Remove From Favourite</button>
+                                        <button type="submit" class="border border-gray-600 shadow hover:shadow-gray-500 text-red-500 px-4 py-2 mt-3 rounded-4xl hover:cursor-pointer transition-all">Remove From Favourite</button>
                                     </form>
                                     <form action="/bookings/<%= home._id %>" method="POST">
-                                        <button type="submit" class="border border-gray-600 shadow hover:shadow-gray-500 text-white px-4 py-2 mt-3 rounded-4xl hover:cursor-pointer transition-all">Book</button>
+                                        <button type="submit" class="border border-gray-600 shadow hover:shadow-gray-500 text-blue-600 px-4 py-2 mt-3 rounded-4xl hover:cursor-pointer transition-all">Book</button>
                                     </form>
                                 </div>
                             </div>

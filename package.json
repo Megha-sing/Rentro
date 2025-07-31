@@ -1,12 +1,12 @@
 {
-  "name": "roomora",
+  "name": "rentro",
   "version": "1.0.0",
   "description": "An airbnb duplicate with MVC Model",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "npx tailwindcss -i ./views/input.css -o ./public/output.css",
-    "start": "node app.js"
+    "tailwind": "npx @tailwindcss/cli -i ./views/input.css -o ./public/output.css --watch",
+    "start": "concurrently \"nodemon app.js\" \"npm run tailwind\""
   },
   "author": "",
   "license": "ISC",

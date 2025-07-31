@@ -10,9 +10,9 @@
             ></div>
             <div class="relative z-10">
                 <div class="text-white justify-center flex items-center w-full text-4xl p-5">
-                    <h1>Welcome To <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-400 hover:bg-gradient-to-r">Roomora</span></h1>
+                    <h1>Welcome To <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-400 hover:bg-gradient-to-r">Rentro</span></h1>
                 </div>
-                <hr class="h-px my-1 mx-20 md:mx-50 bg-green-900 border-0">
+                <hr class="h-px my-1 mx-20 md:mx-50 bg-blue-900 border-0">
                 <div class="text-white mx-5 mt-3 p-2 text-xl">
                     <h2>Here are our registered homes:</h2>
                 </div>
@@ -33,7 +33,7 @@
                                     <span class="text-xl font-bold text-gray-900 dark:text-white">₹ <%= home.price %>/Night</span>
                                 </div>
                                 <div class="flex justify-between mt-8 mx-5">
-                                    <a class="border border-gray-600 text-white px-4 py-2 rounded-4xl hover:cursor-pointer shadow hover:shadow-gray-500 transition-all" href="/homes/<%= home._id %>">Details</a>
+                                    <a class="border border-gray-600 text-black px-4 py-2 rounded-4xl hover:cursor-pointer shadow hover:shadow-gray-500 transition-all" href="/homes/<%= home._id %>">Details</a>
                                     <%- include('../partials/favourite', {home: home}) %>
                                 </div>
                             </div>
