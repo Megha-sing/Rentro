@@ -1,5 +1,5 @@
 
-## **2 Rentro – Property Rental Web App**
+## **Rentro – Property Rental Web App**
 A full-stack rental platform with **role-based access** for guests and hosts, enabling property listing, booking, and management.
 
 ## 🚀 Features
@@ -15,7 +15,8 @@ A full-stack rental platform with **role-based access** for guests and hosts, en
 **Database:** MongoDB  
 **Other:** JWT Authentication
 
-## 📷 Screenshots
+## 📷 Demo
+https://github.com/user-attachments/assets/3a8d696d-15b9-4447-8396-bbb325759058
 
 
 ## 📦 Installation
